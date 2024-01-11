@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/reveal.min.css" integrity="sha512-vFD6wFRj2whK8/X/dMgxJHinKfGlwMYtN+yRCxvxvmOgIiMIlgrFb5iOuCoqwCID+Qcq2/gY8DpmNHcAjfHWxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/theme/simple.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/plugin/highlight/monokai.min.css" integrity="sha512-z8wQkuDRFwCBfoj7KOiu1MECaRVoXx6rZQWL21x0BsVVH7JkqCp1Otf39qve6CrCycOOL5o9vgfII5Smds23rg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-nimib-slide-number="1" >
+      <h1><a href=""><strong>NimibLand</strong></a></h1>
+<h2>Literate Programming and Explorable Explanations</h2>
+      <aside class="notes">
+  <ul>
+<li>I have a talk proposal with more or less of this title which I am waiting to see if it will be accepted to be presented at FOSDEM</li>
+<li>This presentation is also accountability for the commitment I would like to have to focus on these stuff for the rest of the batch</li>
+<li>For the new folks which are struggling, first half of the batch was a long struggle (to find what I want to work on) for me but it was definitely worth it</li>
+</ul>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="2" >
+      <h3><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate Programming</a></h3>
+<p>Programming paradigm by Donald Knuth (1984)</p>
+<small>
+a computer program is given as an explanation of how it works
+in a natural language, such as English,
+interspersed (embedded) with snippets of macros
+and traditional source code,
+from which compilable source code can be generated.
+</small>
+<p>Inspired:</p>
+<ul>
+<li>Jupyter NoteBook</li>
+<li>Quarto (RMarkdown)</li>
+<li>Nbdev</li>
+<li>...</li>
+<li><a href="">Nimib</a></li>
+</ul>
+      <aside class="notes">
+  <ul>
+<li>quote is from wikipedia. TODO: check original source</li>
+</ul>
+<ol>
+<li>Weaving: Generating a comprehensive document about the program and its maintenance.</li>
+<li>Tangling: Generating machine executable code</li>
+</ol>
+<ul>
+<li>Jupyter is more Interactive Computing</li>
+<li>N and B in Nimib come from NoteBook</li>
+<li>Nbdev closest to original literate programming</li>
+<li>Observable most important and not quoted</li>
+</ul>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="3" >
+      <section data-nimib-slide-number="4" >
+      <h3>Nimib as 'Literate Programming'</h3>
+      <pre>hello.nim</pre>
+<pre><code class="nim hljs">import nimib
+
+nbInit
+
+nbText: &quot;A sample program with _Nimib_&quot;
+
+nbCode:
+    echo &quot;hello RC!&quot;
+
+nbSave
+</code></pre>
+
+      <p><code>nim r hello</code></p>
+      <aside class="notes">
+  
+</aside>
+      </section>
+      <section data-background-iframe="hello.html" data-background-interactive></section>
+      </section>
+      <section data-nimib-slide-number="5" >
+      <h3><a href="">Explorable Explanations</a></h3>
+<p>Essay by Bret Victor (2011)</p>
+<small>
+"Explorable Explanations is my umbrella project for ideas
+that enable and encourage truly active reading.
+The goal is to change people's relationship with text.
+People currently think of text as information to be consumed.
+I want text to be used as an environment to think in."
+</small>
+<p>See more at <a href="https://explorabl.es/">explorabl.es</a></p>
+<p><strong>Goal</strong>: make in <a href="">NimibLand</a> better tools for explorable explanations.</p>
+      <aside class="notes">
+  <ul>
+<li>
+<p>NimibLand concretely is a github organization where me and Hugo are
+moving Nimib related projects</p>
+</li>
+<li>
+<p>The funny part is we decided on the name NimibLand
+before knowing about DynamicLand and MathLand</p>
+</li>
+</ul>
+<p>(which I discovered about them this week)</p>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="6" >
+      <section data-nimib-slide-number="7" >
+      <h3><a href="">🌱✨ Explorable Example with Nimib</a></h3>
+      </section>
+      <section data-background-iframe="https://nimib-land.github.io/nblog/drafts/plant_app.html" data-background-interactive></section>
+      </section>
+      <section data-nimib-slide-number="8" >
+      <h3><strong>FIRST TASK</strong></h3>
+<p><a href="">Groviglio</a>: wrapper for <a href="">Tangle.js</a> for Nimib</p>
+      <aside class="notes">
+  <ul>
+<li>Tangle.js is a Javascript library by your very own Bret Victor for explorable explanations</li>
+<li>Discovered this week, does not seem very much known/used but looks like a good starting point</li>
+</ul>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="9" >
+      <p><em>something else happened during Christmas period...</em></p>
+      </section>
+      <section data-nimib-slide-number="10" >
+      <section data-nimib-slide-number="11" >
+      <h3><a href="">Nimib.py</a></h3>
+      <pre>hi.py</pre>
+<pre><code class="py hljs">import nimib as nb
+
+nb.init()
+
+nb.text(&quot;Welcome to `nimib.py`!&quot;)
+
+message = &quot;hello&quot;
+
+with nb.code():
+    print(message)
+
+nb.save()
+</code></pre>
+
+      <p><code>python hi.py</code></p>
+      </section>
+      <aside class="notes">
+  <p>Thanks to advent of code</p>
+
+</aside>
+      <section data-background-iframe="../../nimib.py/hi.html" data-background-interactive></section>
+      </section>
+      <section data-nimib-slide-number="12" >
+      <h3><a href="">Pyscript</a></h3>
+<ul>
+<li>Python in the browser</li>
+<li>PyConUS 2022 (Peter Wang, Anaconda): &quot;Python for the 99%&quot;</li>
+<li>Started using Pyodide (Python in WASM): heavy asset (MBs), slow loading times (seconds)</li>
+<li><em>recently</em>: added a <strong>Micropython</strong> backend: &lt;200kb, &lt;200ms</li>
+</ul>
+      <aside class="notes">
+  <ul>
+<li>Born in Anaconda but run as a community project</li>
+<li>Creation of Fabio Pliger</li>
+</ul>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="13" >
+      <section data-nimib-slide-number="14" >
+      <pre>bunny_meets_whaley.py</pre>
+<pre><code class="py hljs">import nimib as nb
+
+nb.init(pyscript=True)
+
+nb.text(&quot;## Bunny 🐰 meets Whaley 🐳!&quot;)
+nb.text(&quot;Hello world example for pyscript with nimib.py.&quot;)
+
+nb.html(&quot;&lt;button id=\&quot;click-me\&quot;&gt;Click me! 🐰🐳&lt;/button&gt;&lt;br/&gt;&quot;)
+nb.html(&quot;&lt;div id=\&quot;emoji-container\&quot;&gt;&lt;/div&gt;&quot;)
+
+nb.text(&quot;This code adds functionality to the button (try block is a workaround):&quot;)
+with nb.code(pyscript=True):
+    try:
+        from js import document
+
+        def handler(e):
+            output = document.createElement(&quot;span&quot;)
+            output.innerHTML = &quot;🐳&quot;
+            container = document.querySelector(&quot;div#emoji-container&quot;)
+            container.appendChild(output)
+
+        button = document.querySelector(&quot;button#click-me&quot;)
+        button.addEventListener(&quot;click&quot;, handler)
+    except ImportError:
+        print(&quot;running pyscript block not in js&quot;)
+
+nb.save()
+</code></pre>
+
+      <p><strong>TASK</strong>: make it idiomatic</p>
+      <aside class="notes">
+  <ul>
+<li>context manager cannot avoid yielding</li>
+<li>will change to decorators</li>
+</ul>
+
+</aside>
+      </section>
+      <section data-background-iframe="../../nimib.py/bunny_meets_whaley.html" data-background-interactive></section>
+      </section>
+      <section data-nimib-slide-number="15" >
+      <h3>THANKS FOR LISTENING</h3>
+<p>Let me know if you want to play with me</p>
+<p>Will post (tomorrow?) a thread about Nim</p>
+      <aside class="notes">
+  
+</aside>
+      </section>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/reveal.js" integrity="sha512-+Dy2HJZ3Z1DWerDhqFE7AH2HTfnbq8RC1pKOashfMwx1s01fjPUebWoHqrRedU1yFimkexmzJJRilKxjs7lz8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/plugin/highlight/highlight.min.js" integrity="sha512-U3fPDUX5bMrn1wnYqjaK44MFA9E6MKS+zPAg9WPAGF5XhReBeDj3FGaA831CjueG+YJxYA3WaO/m33kMIoOs/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.2.0/plugin/notes/notes.min.js" integrity="sha512-v2co+5nr0bgHekutTzF5jAB0UAjM95dpCF7VVw7WsFCjfxonbQo8Vwl487tNYl0iHWHHGV4o5xKBp5ifyhJkWg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    Reveal.initialize({
+      plugins: [ 
+        RevealHighlight,
+        RevealNotes,
+      ],
+    });
+  </script>
+  </body>
+</html>

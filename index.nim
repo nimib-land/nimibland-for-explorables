@@ -13,7 +13,6 @@ template slideTitle =
         speakerNote: """
 - I have a talk proposal with more or less of this title which I am waiting to see if it will be accepted to be presented at FOSDEM
 - This presentation is also accountability for the commitment I would like to have to focus on these stuff for the rest of the batch
-- For the new folks which are struggling, first half of the batch was a long struggle (to find what I want to work on) for me but it was definitely worth it
 """
 
 template slideLiterate =
@@ -147,7 +146,7 @@ template slideEnterPyscript =
 - Python in the browser
 - PyConUS 2022 (Peter Wang, Anaconda): "Python for the 99%"
 - Started using Pyodide (Python in WASM): heavy asset (MBs), slow loading times (seconds)
-- _recently_: added a **Micropython** backend: <200kb, <200ms
+- _recently_: added a **Micropython**🤯 backend: <200kb, <200ms
 """
         speakerNote: """
 - Born in Anaconda but run as a community project
@@ -196,17 +195,6 @@ nb.save()
 template slideAboutNim =
     slide:
         nbText: """### THANKS FOR LISTENING 🙏
-
-Let me know if you want to play with me
-
-Will post (tomorrow?) a thread about Nim
-"""
-        speakerNote: """
-"""
-
-template bonusSlideCicero =
-    slide:
-        nbText: """
 """
         speakerNote: """
 """
